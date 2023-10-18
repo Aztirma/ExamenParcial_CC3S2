@@ -78,15 +78,6 @@ Ahora, podemos volver a la consola Rails ejecutando rails console y ejecutar Tod
 
 ![Alt text](Imagenes/image-8.png)
 
-Ahora mostraremos todas las rutas generadas por Scaffold:
-
-
-
-FALTA!!!!!!!!
-Muestra todas las rutas generadas por el comando scaffold. Recomendamos realizar solicitudes a estas
-rutas para que puedas ver cómo responde tu aplicación, tanto en términos de comportamiento visual
-como de qué código se llama o se modifica.
-
 ### Mas migraciones
 
 La primera migración nos permitió crear la base de datos. Digamos que el cliente quiere que cada "tareas pendientes" tenga una fecha de vencimiento asociada. **¿Cómo hacemos que eso suceda?** 
@@ -169,9 +160,7 @@ Para agregar un nuevo servicio a nuestra aplicacion, pero si queremos acceder a 
     El objetivo de bundle install es el de instalar las gemas necesarias las cuales son utilizadas para poder trabajar en nuestro proyecto. Por ejemplo, en nuestra aplicación wordguesser, debemos realizar la ejeacución de ese comando para poder interactuar con la aplicacion, pero se noto que no se llego a ejecutar el comando, puesto que habia incompatibilidades con la versión  de gemas que el proyecto proponia y con las versiones instaladas en nuestro ordenador. 
     ![Alt text](image-2.png)
 
-• ¿Por qué es una buena práctica especificar –without production al ejecutarlo en su
-computadora de desarrollo?
-
+• ¿Por qué es una buena práctica especificar –without production al ejecutarlo en su computadora de desarrollo?
 
 Preguntas (3 puntos):  
 
@@ -190,18 +179,31 @@ El archivo que más se corresponde con la lógica del archivo app.rb, es decir o
 
 • ¿Qué clase contiene ese código?  
 
-Esa clase contiene la clase GameController
+Esa clase contiene la clase GameController, la cual hereda ApplicationController, además de contener los métodos `create` el cual es utilizado para iniciar un juego, `show` para mostrar el estado del juego, `guess` en el cual se adivinan las letras, y `win` y `lose` para ver la victoria o derrota.  
 
 • ¿De qué otra clase (que es parte del framework Rails) hereda esa clase?  
 
-
+Como mencionamos anteriormente, hereda ApplicationController.
+ 
 • ¿En qué directorio está el código correspondiente a las vistas de la aplicación Sinatra (new.erb,show.erb, etc.)?  
+
+El código para las vistas de la aplicación Sinatra (como new.erb, show.erb, etc.) está ubicado en el directorio "view/game", donde se encuentran cuatro vistas: lose.html.erb, new.html.erb, show.html.erb y win.html.erb, como se presenta a continuación
+
+![Alt text](image-5.png)
 
 • Los sufijos de nombre de archivo para estas vistas son diferentes en Rails que en la aplicación Sinatra. ¿Qué información proporciona el sufijo situado más a la derecha del nombre del archivo (por ejemplo: en foobar.abc.xyz, el sufijo .xyz) sobre el contenido del archivo?  
 
+El sufijo ".erb" en archivos implica la inclusión de código Ruby, lo que permite contenido dinámico, como en archivos HTML. Esta característica facilita la creación de contenido personalizado en aplicaciones web.
+ 
 • ¿Qué información te brinda el otro sufijo sobre lo que se le pide a Rails que haga con el archivo?  
 
 • ¿En qué archivo está la información de la aplicación Rails que asigna rutas (por ejemplo, GET/new) a las acciones del controlador?  
 
+Al igual que en sinatra el archivo que se encarga de la asignacion de rutas se encuentra en el archivo config/routes.rb
+![Alt text](image-6.png)
+
+
 • ¿Cuál es el papel de la opción :as => 'name' en las declaraciones de ruta de config/routes.rb? .  
+
+Permite tener un código más legible y personalizable, lo que facilita la manipulación de contenido dinámico en aplicaciones web, es decir da nombres descriptivos para hacer el codigo más entendible.
  
